@@ -1,11 +1,10 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import HelloWorld from '@/components/HelloWorld'
+import HelloWorld from '@/components/HelloWorld.vue'
+import First from '@/components/First.vue'
+import Second from '@/components/Second.vue'
 
 Vue.use(Router)
-
-const First = {template: '<div>this first page</div>'};
-const Second = {template: '<div>this second page</div>'};
 
 export default new Router({
   routes: [
@@ -16,11 +15,12 @@ export default new Router({
     },
     {
       path: '/first',
+      name: 'first',
       component: First
-    },
-    {
+    },    {
       path: '/second',
+      name: 'second',
       component: Second
     }
   ]
-});
+})
