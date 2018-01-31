@@ -3,9 +3,9 @@
     <img src="./assets/logo.png">
     <SayHello/>
     <p class="my-router">
-      <router-link to="/first">go to first page</router-link>
+      <router-link :to="'first'">go to first page</router-link>
       <br/>
-      <router-link to="/second">go to second page</router-link>
+      <router-link :to="'second'">go to second page</router-link>
     </p>
     <router-view/>
   </div>
@@ -17,7 +17,13 @@
 
   export default {
     name: "App",
-    components: {HelloWorld, SayHello}
+    components: {HelloWorld, SayHello},
+    watch: {
+      '$route'(to, from) {
+        console.log(from.path,"->", to.path);
+        console.log("router.path->", this.$route.path);
+      }
+    }
   };
 </script>
 
