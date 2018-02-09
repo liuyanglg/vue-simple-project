@@ -1,23 +1,24 @@
 <template>
   <div id="app">
-    <img src="./assets/logo.png">
-    <SayHello/>
-    <p class="my-router">
-      <router-link :to="'first'">go to first page</router-link>
-      <br/>
-      <router-link :to="'second'">go to second page</router-link>
-    </p>
-    <router-view/>
+    <Header></Header>
+    <MTab></MTab>
+    <!--<img src="./assets/logo.png">-->
+    <!--<p class="my-router">-->
+      <!--<router-link :to="'first'">go to first page</router-link>-->
+      <!--<br/>-->
+      <!--<router-link :to="'second'">go to second page</router-link>-->
+    <!--</p>-->
+    <!--<router-view/>-->
   </div>
 </template>
 
 <script>
-  import HelloWorld from "./components/HelloWorld.vue";
-  import SayHello from "./components/SayHello.vue";
+  import Header from "./components/header/header.vue";
+  import MTab from "./components/tab/index.vue";
 
   export default {
     name: "App",
-    components: {HelloWorld, SayHello},
+    components: {Header,MTab},
     watch: {
       '$route'(to, from) {
         console.log(from.path,"->", to.path);
@@ -34,8 +35,7 @@
     -moz-osx-font-smoothing: grayscale;
     text-align: center;
     color: #2c3e50;
-    margin-top: 60px;
-    margin-top: 60px;
+    margin-top:15px;
   }
 
   .my-router {
